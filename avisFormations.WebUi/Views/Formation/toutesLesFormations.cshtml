@@ -1,0 +1,23 @@
+﻿@model List<AvisFormation.Data.Formation>
+@{
+    ViewBag.Title = "ToutesLesFormations";
+} 
+
+ <section id="hero">
+     <div class="d-flex justify-content-between flex-wrap">
+         @foreach (var l in Model)
+         {
+             <!-- card Start -->
+             <div class="card border-0 shadow mb-3" style="width: 28rem;">
+                 <img src="~/img/ma.jpg" class="card-img-top img-fluid" width="500" alt="Formation">
+                 <div class="card-body">
+                     <h5 class="card-title">@l.Nom</h5>
+                     <p class="card-text">@l.Description</p>
+                     <p><span class="text-secondary">Prix: </span>120$</p>
+                     <a href="/Formation/DetailsFormation?nSeo=@l.NomSeo" class="btn btn-primary">Details</a>
+                 </div>
+             </div>
+             <!-- card End -->
+         }
+     </div>
+ </section>
